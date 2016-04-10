@@ -8,5 +8,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 public class BaseService {
 //	public static final PropertiesReader
 	public static final File properties = new File(Class.class.getClass().getResource("/").getPath()+"/address_LQ.properties");
+//	public static final File jsonFile = new File(Class.class.getClass().getResource("/").getPath()+"/carNo.json");
 	public final HttpClient dealClient =new DefaultHttpClient();
 }
