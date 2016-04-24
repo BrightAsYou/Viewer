@@ -14,7 +14,7 @@
     </appender>
    
 	<appender name="rolling-file-appender" class="org.apache.log4j.RollingFileAppender">
-		<param name="File" value="F:/home/was/logs/i2pay-cashier.log" />
+		<param name="File" value="C:/home/was/logs/i2pay-cashier.log" />
 		<param name="Encoding" value="UTF-8" />
 		<param name="Append" value="true" />
 		<param name="MaxFileSize" value="20MB" />
@@ -169,6 +169,6 @@
     <root>
         <level value="debug"/>
         <appender-ref ref="stdout-appender"/>
-      
+         <appender-ref ref="rolling-file-appender"/>
     </root>
 </log4j:configuration>

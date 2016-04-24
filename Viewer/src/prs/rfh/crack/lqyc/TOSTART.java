@@ -29,7 +29,7 @@ public class TOSTART {
 		log.debug("获取了【"+userList.size()+"】条用户数据，将进行合法性检查...");
 		List<UserInfoResponse> list = new ArrayList<UserInfoResponse>();
 		boolean boo= true;
-		for(int i=0 ;i< userList.size()-1; i++){
+		for(int i=0 ;i< userList.size(); i++){
 			for(int j=0;j< list.size();j++){
 				if(userList.get(i).equals(userList.get(j))){
 					boo=false;

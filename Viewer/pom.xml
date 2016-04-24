@@ -38,8 +38,7 @@ a demo</description>
   	<dependency>
   		<groupId>org.slf4j</groupId>
   		<artifactId>slf4j-api</artifactId>
-  		<version>1.7.7</version>
-  		<type>pom.lastUpdated</type>
+  		<version>1.7.6</version>
   	</dependency>
   	<dependency>
   		<groupId>org.apache.log4j</groupId>
