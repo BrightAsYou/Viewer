@@ -30,8 +30,12 @@ public class PersonDealGenerator {
 		Iterator<String> carCollection = set.iterator();
 		List<CarDeal> list = new ArrayList<CarDeal>();
 		while(carCollection.hasNext()){
-			CarDeal cardeal = new CarDeal(carCollection.next());
-			log.debug(cardeal.getCarNo());
+			String current = carCollection.next();
+			CarDeal cardeal = new CarDeal(current);
+			
+//			log.debug(cardeal.getCarNo());
+//			list.add(cardeal);
+//			CarDeal cardeal1 = new CarDeal(current,"B");
 			list.add(cardeal);
 		}
 		return list;

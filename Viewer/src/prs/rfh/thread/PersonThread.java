@@ -115,7 +115,8 @@ public class PersonThread extends Thread {
 			e.printStackTrace();
 		} 
 		Date currentDate = new Date();
-		Date dealDate = new Date(currentDate.getYear(),currentDate.getMonth(),currentDate.getDate(),6,59,58);
+		Date dealDate = new Date(currentDate.getYear(),currentDate.getMonth(),currentDate.getDate(),6,59,59);
+//		Date dealDate = new Date(currentDate.getYear(),currentDate.getMonth(),currentDate.getDate(),0,0,0);
 		for(CarDeal deal :list){
 			try {
 				this.sleep(50);

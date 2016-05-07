@@ -2,7 +2,10 @@ package prs.rfh.crack.lqyc;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.dom4j.DocumentException;
 import org.slf4j.Logger;
@@ -10,12 +13,12 @@ import org.slf4j.LoggerFactory;
 
 import javassist.bytecode.Descriptor.Iterator;
 import prs.rfh.crack.lqyc.model.UserInfoResponse;
+import prs.rfh.shedule.LoginTimerTask;
 import prs.rfh.thread.PersonThread;
 import prs.rfh.util.DOMUtil;
 
 public class TOSTART {
 	private static final Logger log = LoggerFactory.getLogger(PersonThread.class);
-	
 	public static void main(String[] args) throws DocumentException {
 		// TODO Auto-generated method stub
 		
@@ -38,11 +41,15 @@ public class TOSTART {
 			}
 			if(boo)list.add(userList.get(i));
 		}
-		
+		Date currentDate = new Date();
+		Date dealDate = new Date(currentDate.getYear(),currentDate.getMonth(),currentDate.getDate(),6,58,59);
+		Timer timer = new Timer();
 		log.debug("合法性检查结束，将对合法的【"+list.size()+"】个用户进行登录");
-		for(UserInfoResponse user:list){
-			new PersonThread(user).start();
-		}
+		timer.schedule(new LoginTimerTask(list), dealDate);
+		
+		
+		
+		
 	}
 
 }

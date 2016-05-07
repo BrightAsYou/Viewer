@@ -56,16 +56,16 @@ public class DealCarService extends BaseService{
 	public JSONObject dealCar(CarDeal deal,UserInfoResponse user,CookieStore cookieStore) throws ClientProtocolException, IOException{
 		String timeOfDay = null;
 		if("AM".equals(user.getDealdate().split("\\|")[1])){
-			timeOfDay = "812";
+			timeOfDay = "811";
 		}else if("PM".equals(user.getDealdate().split("\\|")[1])){
-			timeOfDay = "15";
+			timeOfDay = "1215";
 		}else{
-			timeOfDay = "58";
-		}
+			timeOfDay = "1518";
+		}//1820
 		//1.构建请求路径
 		requestPath = dealCarPath.replace("{1}", deal.getCarNo()+"."+deal.getDealdate()).replace("{2}", user.getXxzh()).replace("{3}",timeOfDay );
 		log.debug("dealCarPath["+deal.getCarNo()+"]["+user.getXxzh()+"]"+requestPath);
-		//http://longquanapi.xuechebu.com/KM2/ClYyAddByMutil?ipaddress=192.168.1.129&ossdk=22&os=an&trainType=&appversion=2.9.1&params=18006.2016年04月11日.15.&version=2.9.1&jlcbh=&xxzh={1}&isJcsdYyMode=5&imei=357143048886748&appkey=ab916c7221df52f79d4debbaab51f794&osversion=5.1.1
+		//http://longquanapi.xuechebu.com 	
 		ClientConnectionManager manager = dealClient.getConnectionManager();
 //		manager.
 		Random rand = new  Random();

@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <UserList>
-	 <User>
-		<xxzh>51513605</xxzh>
-		<password>19920820</password>
-		<jgid>117001</jgid>
-		<dealdate>2016-04-11|PM</dealdate>
-	</User>
+	 
 	<User>
 		<xxzh>51513657</xxzh>
 		<password>19930901</password>
 		<jgid>117001</jgid>
 		<dealdate>2016-04-11|AM</dealdate>
 	</User>  
-	<!-- <User>
+	
+	<User>
+		<xxzh>51513605</xxzh>
+		<password>19920820</password>
+		<jgid>117001</jgid>
+		<dealdate>2016-04-11|AM</dealdate>
+	</User>
+	<!--
+	 <User>
 		<xxzh>51525991</xxzh>
 		<password>19790827</password>
 		<jgid>117001</jgid>

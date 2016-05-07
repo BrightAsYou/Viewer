@@ -25,6 +25,28 @@ public class CarDeal {
 		this.carNo = carNo;
 	}
 	
+	public CarDeal(String carNo,String flag){
+		if(flag.equals("A")){
+			Date date = new Date();
+			date.setDate(date.getDate()+2);
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+			String dataStr = sdf.format(date);
+			this.dealdate = dataStr;
+			this.isFinish = "0";
+			this.isDealed = "0";
+			this.carNo = carNo;
+		}else if(flag.equals("B")){
+			Date date = new Date();
+			date.setDate(date.getDate()+3);
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+			String dataStr = sdf.format(date);
+			this.dealdate = dataStr;
+			this.isFinish = "0";
+			this.isDealed = "0";
+			this.carNo = carNo;
+		}
+	}
+	
 	public CarDeal(String carNo, String dealdate, String isFinish, String isDealed) {
 		super();
 		this.carNo = carNo;
@@ -64,5 +86,10 @@ public class CarDeal {
 	}
 	public static void main(String[] args) {
 		new CarDeal("123");
+		Date today = new Date();
+		today.setDate(today.getDate()+2);
+			
+		System.out.println(today);
 	}
+	
 }
