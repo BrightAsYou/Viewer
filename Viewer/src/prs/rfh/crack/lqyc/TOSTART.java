@@ -42,14 +42,14 @@ public class TOSTART {
 			if(boo)list.add(userList.get(i));
 		}
 		Date currentDate = new Date();
-		Date dealDate = new Date(currentDate.getYear(),currentDate.getMonth(),currentDate.getDate(),6,58,59);
+		if(currentDate.getHours()>=12){
+			currentDate.setDate(currentDate.getDate()+1);
+		}
+		Date dealDate = new Date(currentDate.getYear(),currentDate.getMonth(),currentDate.getDate(),6,57,59);
 		Timer timer = new Timer();
-		log.debug("合法性检查结束，将对合法的【"+list.size()+"】个用户进行登录");
+		log.debug("合法性检查结束，将对合法的【"+list.size()+"】个用户进行登录，时间"+dealDate.toLocaleString());
 		timer.schedule(new LoginTimerTask(list), dealDate);
-		
-		
-		
-		
+
 	}
 
 }

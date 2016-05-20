@@ -4,6 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import prs.rfh.service.DealCarService;
+
 
 /**
  * 
@@ -14,8 +19,14 @@ import org.junit.Test;
  */
 public class CarDeal {
 
+	private static final Logger log = LoggerFactory.getLogger(DealCarService.class);
+	private static String dealCarPath = null;
+	
 	public CarDeal(String carNo){
 		Date date = new Date();
+		if(date.getHours()>=12){
+			date.setDate(date.getDate()+1);
+		}
 		date.setDate(date.getDate()+6);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
 		String dataStr = sdf.format(date);
@@ -23,6 +34,7 @@ public class CarDeal {
 		this.isFinish = "0";
 		this.isDealed = "0";
 		this.carNo = carNo;
+		log.debug("生成预约单【"+date.toLocaleString()+"】【"+carNo+"】");
 	}
 	
 	public CarDeal(String carNo,String flag){

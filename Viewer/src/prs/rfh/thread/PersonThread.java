@@ -115,15 +115,19 @@ public class PersonThread extends Thread {
 			e.printStackTrace();
 		} 
 		Date currentDate = new Date();
+		if(currentDate.getHours()>=12){
+			currentDate.setDate(currentDate.getDate()+1);
+		}
+		
 		Date dealDate = new Date(currentDate.getYear(),currentDate.getMonth(),currentDate.getDate(),6,59,59);
 //		Date dealDate = new Date(currentDate.getYear(),currentDate.getMonth(),currentDate.getDate(),0,0,0);
 		for(CarDeal deal :list){
-			try {
-				this.sleep(50);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				this.sleep(50);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			Timer timer = new Timer();
 			timer.schedule(new DealTimerTask(deal, user,sender.getCookieStore()), dealDate);
 			try {
