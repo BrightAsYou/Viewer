@@ -70,8 +70,10 @@ public class PersonThread extends Thread {
 		//TODO 添加登录状态
 		
 		String login_addr = null;
+		String queryTeacher = null;
 		try {
 			login_addr = PropertiesReader.getPropertieyByKey("login_addr",properties);
+			queryTeacher = PropertiesReader.getPropertieyByKey("queryTeacher",properties);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

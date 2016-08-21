@@ -118,6 +118,8 @@ public class CarNoReader {
 	public static Set getCarFromInternet(){
 		//如果网上获得数据注意不能更改引用，要clear后重装
 		//TODO 
+		Set set = new HashSet();
+		
 		if(false){
 			set.clear();
 //			set.add

@@ -3,7 +3,9 @@ package prs.rfh.crack.lqyc;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -21,7 +23,7 @@ public class TOSTART {
 	private static final Logger log = LoggerFactory.getLogger(PersonThread.class);
 	public static void main(String[] args) throws DocumentException {
 		// TODO Auto-generated method stub
-		
+		Map map = new HashMap();
 		log.debug("用户数据地址"+Class.class.getClass().getResource("/").getPath()+"userDatas.xml");
 		List<UserInfoResponse> userList = DOMUtil.getListByLocationXML(new File(Class.class.getClass().getResource("/").getPath()+"/userDatas.xml"));
 		if(userList.size()<1){
